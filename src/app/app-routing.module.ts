@@ -16,17 +16,33 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'xp',
-    loadChildren: () => import('./pages/xp/xp.module').then( m => m.XpPageModule)
+    path: 'user',
+    loadChildren: () => import('./pages/user/user.module').then( m => m.UserPageModule)
   },
   {
-    path: 'skills',
-    loadChildren: () => import('./pages/skills/skills.module').then( m => m.SkillsPageModule)
+    path: 'docs',
+    loadChildren: () => import('./pages/docs/docs.module').then( m => m.DocsPageModule)
   },
   {
-    path: 'schools',
-    loadChildren: () => import('./pages/schools/schools.module').then( m => m.SchoolsPageModule)
-  }
+    path: 'contacts',
+    loadChildren: () => import('./pages/contacts/contacts.module').then( m => m.ContactsPageModule)
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
+  },
+
+  {
+    path: 'faq',
+    loadChildren: () => import('./pages/faq/faq.module').then( m => m.FaqPageModule)
+  },
+
+  {
+    path: '**',
+    loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
+  },
+
+
 ];
 
 @NgModule({

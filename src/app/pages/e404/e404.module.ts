@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { XpPageRoutingModule } from './xp-routing.module';
+import { E404PageRoutingModule } from './e404-routing.module';
 
-import { XpPage } from './xp.page';
+import { E404Page } from './e404.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    XpPageRoutingModule
+    E404PageRoutingModule
   ],
-  declarations: [XpPage]
+  declarations: [E404Page]
 })
-export class XpPageModule {}
+export class E404PageModule {}
