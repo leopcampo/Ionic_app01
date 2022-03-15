@@ -38,9 +38,15 @@ const routes: Routes = [
   },
 
   {
+    path: 'db/faq',
+    loadChildren: () => import('./db/faq/faq.module').then( m => m.FaqPageModule)
+  },
+
+  {
     path: '**',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
   },
+
 
 
 ];
