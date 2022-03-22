@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { initializeApp } from 'firebase/app';
 import { doc, getDoc, getFirestore, updateDoc } from 'firebase/firestore';
 import { environment } from 'src/environments/environment';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-view',
@@ -25,11 +26,15 @@ export class ViewPage implements OnInit {
   // Armazena o artigo completo
   art: any;
 
+  // Variável que armazena dados do usuário logado
+  user: any;
+
   constructor(
 
     // Injeta dependências
     private activatedRoute: ActivatedRoute,
-    private route: Router
+    private route: Router,
+    public auth: AngularFireAuth
   ) { }
 
   // 'ngOnInit()' deve ser 'async' por causa do 'await' usado logo abaixo!
@@ -58,5 +63,15 @@ export class ViewPage implements OnInit {
       // Volta para a lista de artigos
       this.route.navigate(['/usuarios']);
     }
+
+    // Verifica se tem usuario logado
+    this.auth.authState.subscribe(user => {
+      if (user) {
+
+        // Armazena os dados do usuário em 'this.user'
+        this.user = user;
+      }
+    });
   }
+
 }

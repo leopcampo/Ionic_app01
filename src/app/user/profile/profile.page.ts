@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 // Importa dependências
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -12,13 +11,12 @@ import { Router } from '@angular/router';
 export class ProfilePage implements OnInit {
 
   // Variável que armazena dados do usuário logado
-  user: any;
+  public userData: any;
 
   constructor(
 
     // Injeta dependências
-    public auth: AngularFireAuth,
-    private route: Router
+    public auth: AngularFireAuth
   ) { }
 
   ngOnInit() {
@@ -26,11 +24,7 @@ export class ProfilePage implements OnInit {
     // Verifica se esta logado
     this.auth.authState.subscribe(user => {
       if (user) {
-        this.user = user;
-
-        // Converte as datas do perfil para JavaScript
-        const createdAt = new Date(this.user.metadata.createdAt);
-        const lastLoginAt = new Date(this.user.metadata.lastLoginAt);
+        this.userData = user;
       }
     });
 

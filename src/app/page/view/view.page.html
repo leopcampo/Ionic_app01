@@ -20,7 +20,13 @@
   <small class="date-time">{{ art.date | date :'d/m/Y'}} às {{ art.date | date :'H:mm'}}.</small>
   <div [innerHTML]="art.body"></div>
 
-  &nbsp;
-  <ion-button size="block" routerLink="/usuarios">&larr; Voltar</ion-button>
+  <ion-button class="ion-margin-top" size="block" routerLink="/usuarios">&larr; Voltar</ion-button>
+
+  <ion-item-divider></ion-item-divider>
+
+  <h3>Comentários</h3>
+
+  <p>Deixe seu comentário:</p>
+  <ion-textarea placeholder="Enter more information here..."></ion-textarea>
 
 </ion-content>
