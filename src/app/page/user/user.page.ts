@@ -56,9 +56,5 @@ export class UserPage implements OnInit {
       });
 
     });
-
-
-
   }
-
 }

@@ -136,6 +136,7 @@ export class ManualPage implements OnInit {
       views: '0',
       status: 'on'
     }
+
   ];
 
   // Conexão com Firebase. Observe o uso da chave de 'environment'

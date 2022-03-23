@@ -30,10 +30,4 @@ export class ProfilePage implements OnInit {
 
   }
 
-  // Envia usuário para perfil do Google em uma nova aba/janela do navegador
-  toGoogle() {
-    window.open('https://myaccount.google.com/');
-    return false;
-  }
-
 }
