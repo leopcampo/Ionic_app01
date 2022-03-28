@@ -33,7 +33,7 @@ export class AboutPage implements OnInit {
       where('status', '==', 'on'), // Somente se o 'status' for 'on'
       orderBy('date', 'desc') // Obtém os documentos ordenados pela data, da mais nova para a mais antiga
     ), (myManual) => {
-
+console.log(myManual);
       // Limpa a lista de manuais para carregar novamente.
       this.manuals = [];
 
